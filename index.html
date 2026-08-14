@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HazY.Coding // HazY.Ecosystem</title>
+  <style>
+    :root {
+      --bg-color: #0a0d14;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(0, 240, 255, 0.4);
+      --primary-text: #f1f5f9;
+      --secondary-text: #94a3b8;
+      --accent-cyan: #00f0ff;
+      --accent-glow: rgba(0, 240, 255, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--primary-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .glow-bg {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, rgba(10, 13, 20, 0) 70%);
+      filter: blur(80px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1.5rem;
+    }
+
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary-text);
+    }
+
+    .brand span {
+      color: var(--accent-cyan);
+    }
+
+    .brand .divider {
+      color: var(--secondary-text);
+      opacity: 0.4;
+      margin: 0 0.3rem;
+    }
+
+    .nav-links a {
+      color: var(--secondary-text);
+      text-decoration: none;
+      margin-left: 1.2rem;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .hero {
+      margin-bottom: 4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--secondary-text);
+      font-size: 1.15rem;
+      max-width: 650px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--card-hover-border);
+      transform: translateY(-3px);
+    }
+
+    .card-prefix {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--secondary-text);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      color: var(--secondary-text);
+    }
+
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--secondary-text);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <div class="container">
+    <header>
+      <div class="brand">HazY<span>.Coding</span> <span class="divider">//</span> HazY<span>.Ecosystem</span></div>
+      <nav class="nav-links">
+        <a href="#modules">Modules</a>
+        <a href="https://github.com/hazycoding" target="_blank">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-badges">
+        <span class="hero-badge">HazY.Coding</span>
+        <span class="hero-badge">HazY.Mods</span>
+      </div>
+      <h1>Android UI, System Mods & Custom Engineering.</h1>
+      <p>Building custom Android SystemUI tweaks, layout modifications, automated testing suites, and open-source applications across the HazY ecosystem.</p>
+    </section>
+
+    <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem;" id="modules">Active Sub-Modules</h2>
+    <div class="grid">
+
+      <!-- HazY.Mods -->
+      <div class="card">
+        <div class="card-prefix">HazY.Mods</div>
+        <h3>SystemUI & Layout Mods</h3>
+        <p>Custom Android UI tweaks, status bar modifications, quick settings redesigns, and system hooks.</p>
+        <div class="card-tags">
+          <span class="tag">Android UI</span>
+          <span class="tag">SystemUI</span>
+          <span class="tag">Tweaks</span>
+        </div>
+      </div>
+
+      <!-- HazY.Pixel -->
+      <div class="card">
+        <div class="card-prefix">HazY.Pixel</div>
+        <h3>UI Design & Themes</h3>
+        <p>Material Design customization, dynamic theme extraction, icon design, and visual component engineering.</p>
+        <div class="card-tags">
+          <span class="tag">Material You</span>
+          <span class="tag">Themes</span>
+          <span class="tag">UI/UX</span>
+        </div>
+      </div>
+
+      <!-- HazY.Stack -->
+      <div class="card">
+        <div class="card-prefix">HazY.Stack</div>
+        <h3>Architecture & Environments</h3>
+        <p>Full-stack architecture, system environments, and framework configurations across Android and web setups.</p>
+        <div class="card-tags">
+          <span class="tag">Full-Stack</span>
+          <span class="tag">Architecture</span>
+          <span class="tag">Setup</span>
+        </div>
+      </div>
+
+      <!-- HazY.Build -->
+      <div class="card">
+        <div class="card-prefix">HazY.Build</div>
+        <h3>Products & Releases</h3>
+        <p>CI/CD automated builds, compiled APK releases, packaged side-projects, and live demos.</p>
+        <div class="card-tags">
+          <span class="tag">APKs</span>
+          <span class="tag">Releases</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+
+      <!-- HazY.Deploy -->
+      <div class="card">
+        <div class="card-prefix">HazY.Deploy</div>
+        <h3>Automation & Delivery</h3>
+        <p>Automated deployment scripts, cloud pipelines, build runners, and continuous delivery tools.</p>
+        <div class="card-tags">
+          <span class="tag">Automation</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">Pipelines</span>
+        </div>
+      </div>
+
+      <!-- HazY.Logic -->
+      <div class="card">
+        <div class="card-prefix">HazY.Logic</div>
+        <h3>Algorithms & Backend</h3>
+        <p>Core application logic, performance algorithms, data processing, and state management frameworks.</p>
+        <div class="card-tags">
+          <span class="tag">Algorithms</span>
+          <span class="tag">Backend</span>
+          <span class="tag">Core Logic</span>
+        </div>
+      </div>
+
+      <!-- HazY.Syntax -->
+      <div class="card">
+        <div class="card-prefix">HazY.Syntax</div>
+        <h3>Libraries & Standards</h3>
+        <p>Clean code standards, reusable open-source libraries, code snippets, and configuration kits.</p>
+        <div class="card-tags">
+          <span class="tag">Libraries</span>
+          <span class="tag">Snippets</span>
+          <span class="tag">Open Source</span>
+        </div>
+      </div>
+
+      <!-- HazY.Node -->
+      <div class="card">
+        <div class="card-prefix">HazY.Node</div>
+        <h3>Services & APIs</h3>
+        <p>Distributed backend services, API integrations, server scripts, and networking utilities.</p>
+        <div class="card-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">APIs</span>
+          <span class="tag">Networking</span>
+        </div>
+      </div>
+
+      <!-- HazY.Logs -->
+      <div class="card">
+        <div class="card-prefix">HazY.Logs</div>
+        <h3>Testing & Profiling</h3>
+        <p>Automated UI test runners, Logcat output analysis, performance profiling, and devlog patch notes.</p>
+        <div class="card-tags">
+          <span class="tag">Testing</span>
+          <span class="tag">Logcat</span>
+          <span class="tag">Devlogs</span>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div>&copy; HazY.Coding // HazY.Ecosystem</div>
+      <div>Hosted on GitHub Pages</div>
+    </footer>
+  </div>
+</body>
+</html>
